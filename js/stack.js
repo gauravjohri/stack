@@ -28,11 +28,15 @@ class Stack {
         return this.collection;
     }
 
-    getWithPage() {
+    getWithPage(currentPage = 1) {
         let page = Math.ceil(this.count() / this.limit)
-        this.collection.page = page;
-        this.collection.totalRecords = this.count();
-        return this.collection;
+        let totalRecords = this.count();
+        let curPage = (currentPage - 1) * this.limit;
+        let data = this.collection.splice(curPage, this.limit);
+        data.page = page;
+        data.totalRecords = totalRecords;
+        data.currentPage = currentPage;
+        return data;
     }
 
     getByIindex(index) {
