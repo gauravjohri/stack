@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/stack.js"></script>
+    <script>
+        let obj = [
+            { id: 1, title: "This is demo1!" },
+            { id: 2, title: "This is demo2!" },
+        ];
+        let data = new Stack(obj);
+        data.add({ id: 3, title: "This is demo3!" })
+        data.add({ id: 4, title: "This is demo4!" })
+        data.get().map((element) => {
+            console.log(element.id, element.title);
+        })
+        let search = data.search('title', 'demo1');
+        console.log('search == ', search, data.has('id'));
+        // data.remove(2)
+        // data.remove(1)
+        // let zero = data.getByIindex(0);
+        // zero.title = "sd"
+        // zero.desc = "sd"
+        // data.update(0, zero)
+        // console.log(data.get());
+        // console.log(data.count());
+        // let arr = ["1", "2ddg"];
+        // let arrData = new Stack(arr);
+        // console.log(arrData.get());
+        // arrData.add("sdsd");
+        // console.log(arrData.get());
+        // arrData.update(2, "sssss");
+        // console.log(arrData.get(), arrData.count());
+        // arrData.remove(2);
+        // console.log(arrData.get(), arrData.count(), arrData.getByIindex(1));
+        // console.log(arrData.last());
+        // console.log(arrData.first());
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
