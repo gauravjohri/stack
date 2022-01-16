@@ -12,6 +12,10 @@ class Stack {
         this.collection.push(element)
     }
 
+    has(key) {
+        return this.collection.shift().hasOwnProperty(key);
+    }
+
     remove(index) {
         this.collection.splice(index, 1);
     }
@@ -68,9 +72,5 @@ class Stack {
             }
         })
         return search;
-    }
-
-    has(key) {
-        return this.collection.shift().hasOwnProperty(key);
     }
 }
